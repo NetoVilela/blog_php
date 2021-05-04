@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+  web:
+    image: webdevops/php-apache:7.3
+    container_name: php-apache-container
+    volumes:
+      - ./:/app
+    ports:
+      - "8089:80"
+    depends_on: 
+      - db
+    networks:
+      - casa
+    
+  db:
+    image: postgres:12.6
+    container_name: postgres-container
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment: 
+      - POSTGRES_PASSWORD=1234
+    networks: 
+      - casa
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    ports:
+      - "5712:80"
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: "neto@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "1234"
+    depends_on: 
+    - db
+    networks: 
+      - casa
+
+networks: 
+  casa:
+    driver: bridge
