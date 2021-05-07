@@ -26,14 +26,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </head>
 <body>
 
-	<nav class="navbar navbar-light bg-light">
-	<a class="navbar-brand" href="#">
-		<img src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202125blogbloggerlogosocialsocialmedia-115692_115609.png" width="50" height="50" class="d-inline-block align-top" alt="">
-	</a>
-	
-	</nav>
 
-		<div class="container">
+	<div class="container">
 		
 		<div id="content">
 			<?php echo $this->Flash->render(); ?>

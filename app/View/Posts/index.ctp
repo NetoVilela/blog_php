@@ -3,7 +3,7 @@
 </div>
 
 
-
+    
     <a href="/posts/add" class="btn btn-success mr-0"> Adicionar uma postagem </a>
 
     <?php 
