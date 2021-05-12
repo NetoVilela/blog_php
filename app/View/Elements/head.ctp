@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('bootstrap.css');
+		echo $this->Html->css('my-style.css');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');

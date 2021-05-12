@@ -35,9 +35,9 @@ class PostsController extends AppController{
     }
 
     public function delete($id){
-        if(!$this->request->is('post')){
-            throw new MethodNotAllowedException();
-        }
+        // if(!$this->request->is('post')){
+        //     throw new MethodNotAllowedException();
+        // }
         if($this->Post->delete($id)){{
             $this->Flash->success('Postagem deletada com sucesso!');
             $this->redirect(array('action'=>'index'));
