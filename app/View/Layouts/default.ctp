@@ -61,7 +61,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div class="container">
 		<div id="content">
 			<?php echo $this->Flash->render(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
 	</div>

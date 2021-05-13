@@ -12,7 +12,7 @@
                     </form>      
         </div>
 
-    <table class="table table-striped">
+    <table class="table table-striped table-user">
 
         <tr>
             <th>Id</th>
@@ -31,8 +31,8 @@
                         </a>
 
                         <div id="bodyCollapse<?php echo $post['Post']['id']; ?>" class="collapse">
-                            <div class="card card-body">
-                            <?php echo $post['Post']['body']; ?>
+                            <div class="text-justify">
+                                <p><?php echo $post['Post']['body']; ?></p>
                             </div>                
                         </div>
 
@@ -53,19 +53,18 @@
         <?php endforeach; ?> 
 <?php endif; ?>
 
-
 <?php if(!AuthComponent::user('username')): ?>
 
     <div class="container cards">
         <?php foreach($posts as $post): ?>
-            <div class=" row card">
-                <div class="card-head text-center">
-                    <h2> <?php echo $post['Post']['title']; ?></h2>
+                <div class="card" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
+                    <div class="card-head text-center">
+                        <h2> <?php echo $post['Post']['title']; ?></h2>
+                    </div>
+                    <div class="card-body">
+                        <p> <?php echo $post['Post']['body']; ?> </p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p> <?php echo $post['Post']['body']; ?> </p>
-                </div>
-            </div>
         <?php endforeach; ?>
     </div>
 
@@ -77,3 +76,10 @@
 
 </table>
 
+<script>
+
+    function redirectPost(id){
+        window.location.replace("/posts/view/"+id);
+    }
+
+</script>

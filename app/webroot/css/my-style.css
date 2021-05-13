@@ -1,45 +1,38 @@
-.border{
-    border: solid 1px red;
-}
-
 /* ======================Menu============================ */
 .menu{
     display:flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .menu-li{
     font-weight: bold;
 }
-
 .btn-logout{
     display: flex;
     align-items: center;
 }
-
 .actions-posts{
     display:flex;
     justify-content: space-between;
     margin: 3vh 0;
 }
-
 .secondary-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .name-user{
     margin-right: 2vh;
 }
-
 .navbar{
     display: flex;
     justify-content: space-between;
 }
 
 /*==========================AUXILIARES==============================*/
+.border{
+    border: solid 1px red;
+}
 .row-center{
     display: flex;
     justify-content: center;
@@ -50,14 +43,12 @@
     font-weight: bold;
 }
 
-
 /*==============================FORM-GENERAL========================*/
 .form-box{
     display: flex;
     justify-content: center;
     height: 75vh;
 }
-
 
 /*==============================FORM-LOGIN==========================*/
 .form-login{
@@ -75,7 +66,6 @@
     align-items: center;
 }
 
-
 /*===============================FORM-ADD-POSTS===========================*/
 .form-box-add{
     width: 100%;
@@ -85,20 +75,38 @@
 .cards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 .card{
-    width: 20vw;
-    height: inherit;
+    text-align: justify;
     border-radius: 8px;
     border: solid #d3d3d3 1px;
-    width: 25vw;
-    overflow: hidden;
+    width: 30%;
+    margin: 1.5%;
     padding: 2vh;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    cursor: pointer;
+    height: 28vh;
+}
+.card p{
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 6; 
+    -webkit-box-orient: vertical;
+}
+.card:hover{
+    transition: 0.4s;
+    box-shadow: 3px 3px 3px 3px #ddd;
 }
 .card-head{
     border-bottom: 2px solid #d3d3d3;
 }
 .card-body{
     padding-top: 2vh;
+}
+
+/*=================================TABELA USUÁRUIO=======================*/
+.table-user{
+    font-size: 1.4em;
 }
