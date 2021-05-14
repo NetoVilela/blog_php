@@ -7,6 +7,24 @@ class PostsController extends AppController{
 
     public function index(){
         $this->set('posts',$this->Post->find('all'));
+        
+    }
+
+    public function index_filter(){
+        $search_content = $this->request->data['search_content'];       
+
+        $conditions = array("OR" => array(
+            "Post.title ILIKE" => '%'.$search_content.'%',
+            "Post.body ILIKE" => '%'.$search_content.'%'
+        ));
+        
+        $this->set('posts',$this->Post->find('all', array('conditions'=>$conditions)));
+
+    }
+
+    public function filterPost(){
+        $this->set('posts',$this->Post->findById(18));
+        
     }
 
     public function view($id=null){

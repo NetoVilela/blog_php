@@ -1,4 +1,3 @@
-<?php if(AuthComponent::user('username')): ?>
     <div class="bg-primary">  
         <h1 class="text-center text-light">Posts do blog</h1>
     </div>
@@ -6,17 +5,10 @@
         <div class="actions-posts">
         
             <a href="/posts/add" class="btn btn-success"> Adicionar uma postagem </a>
-                    <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
+            <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
                         <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>      
-                
-                    <!-- <?php
-                        // echo $this->Form->create('Post', array('class'=>'form-inline  my-lg-0 justify-content-center', 'type'=>'get', 'action'=>'/posts/indexFilter'));
-                        // echo $this->Form->input('', array('class'=>'form-control', 'type'=>'search', 'placeholder'=>'Buscar', 'aria-label'=>'Search'));
-                    ?>
-                    <button class="btn btn-outline-success" type="submit">Buscar</button> -->
-
+                    </form>       
         </div>
 
     <table class="table table-striped table-user">
@@ -28,7 +20,8 @@
             <th>Ações</th>
         </tr>
 
-        <?php foreach($posts as $post): ?>
+    
+        <?php   foreach($posts as $post): ?>
         
             <tr>
                 <td> <?php echo $post['Post']['id'];  ?> </td>
@@ -56,37 +49,8 @@
                     </a>      
                 </td> 
             </tr>
+            
 
-        <?php endforeach; ?> 
-<?php endif; ?>
+        <?php  endforeach; ?>  
+    </table>
 
-<?php if(!AuthComponent::user('username')): ?>
-
-    <div class="container cards">
-        <?php foreach($posts as $post): ?>
-                <div class="card" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
-                    <div class="card-head text-center">
-                        <h2> <?php echo $post['Post']['title']; ?></h2>
-                    </div>
-                    <div class="card-body">
-                        <p> <?php echo $post['Post']['body']; ?> </p>
-                    </div>
-                </div>
-        <?php endforeach; ?>
-    </div>
-
-
-
-
-
-<?php endif; ?>
-
-</table>
-
-<script>
-
-    function redirectPost(id){
-        window.location.replace("/posts/view/"+id);
-    }
-
-</script>

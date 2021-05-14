@@ -1,14 +1,14 @@
+<h1 class="text-center">Cadastro de usuários</h1>
 <div>
-    <?php echo $this->Form->create('User'); ?>
+    <?php echo $this->Form->create('User', array('class'=>'form-group form-box-add')); ?>
     <fieldset>
-        <legend><?php echo __('Adicionar usuário') ?></legend>
         <?php
-            echo $this->Form->input('username');
-            echo $this->Form->input('password');
+            echo $this->Form->input('username', array('class'=>'form-control'));
+            echo $this->Form->input('password', array('class'=>'form-control'));
             echo $this->Form->input('role',array(
                 'options' => array('admin' => 'Admin', 'author'=>'Author')
             ));
         ?>
     </fieldset>
-    <?php echo $this->Form->end(__('Submit')); ?>
+    <input type="submit" value="Cadastrar usuário" class="btn btn-success">
 </div>
