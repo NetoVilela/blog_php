@@ -12,6 +12,7 @@ CREATE TABLE posts (
     id_user INT NOT NULL,
     title VARCHAR(50),
     body TEXT,
+    active boolean,
     created TIMESTAMP DEFAULT NULL,
     modified TIMESTAMP DEFAULT NULL,
     FOREIGN KEY (id_user) REFERENCES users (id)

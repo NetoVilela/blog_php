@@ -1,4 +1,3 @@
-<?php if(AuthComponent::user('username')): ?>
     <div class="bg-primary">  
         <h1 class="text-center text-light">Posts do blog</h1>
     </div>
@@ -7,15 +6,10 @@
         
             <a href="/posts/add" class="btn btn-success"> Adicionar uma postagem </a>
 
-            <a href="/posts/inactive" class="btn btn-danger">Inativos</a>
+            <a href="/posts/inactive" class="btn btn-danger">Posts desativados</a>
 
             <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
                 <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search">
-                <select name="active" id="active">
-                    <option value="all">Todos</option>
-                    <option value="true">Ativos</option>
-                    <option value="false">Inativos</option>
-                </select>
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>      
 
@@ -70,33 +64,9 @@
             </tr>
 
         <?php endforeach; ?> 
-<?php endif; ?>
 
-<?php if(!AuthComponent::user('username')): ?>
 
-    <div class="container cards">
-        <?php foreach($posts as $post): ?>
-                <div class="card  col-sm-10  col-md-3" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
-                   <div>
-                    <div class="card-head text-center">
-                            <h2> <?php echo $post['Post']['title']; ?></h2>
-                        </div>
-                        <div class="card-body">
-                            <p> <?php echo $post['Post']['body']; ?> </p>
-                        </div>
-                   </div>
-                </div>
-        <?php endforeach; ?>
-    </div>
 
-<?php endif; ?>
 
 </table>
 
-<script>
-
-    function redirectPost(id){
-        window.location.replace("/posts/view/"+id);
-    }
-
-</script>
