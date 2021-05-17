@@ -81,12 +81,14 @@
     text-align: justify;
     border-radius: 8px;
     border: solid #d3d3d3 1px;
-    width: 30%;
     margin: 1.5%;
     padding: 2vh;
     box-shadow: 1px 1px 1px 1px #ddd;
     cursor: pointer;
-    height: 28vh;
+    height: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card p{
     overflow: hidden; 
@@ -105,6 +107,11 @@
 .card-body{
     padding-top: 2vh;
 }
+@media only screen and (max-width: 600px) {
+    .card{
+        height: 28vw;
+    }
+  }
 
 /*=================================TABELA USUÁRUIO=======================*/
 .table-user{

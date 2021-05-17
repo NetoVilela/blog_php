@@ -64,13 +64,15 @@
 
     <div class="container cards">
         <?php foreach($posts as $post): ?>
-                <div class="card" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
+                <div class="card  col-sm-10  col-md-3" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
+                   <div>
                     <div class="card-head text-center">
-                        <h2> <?php echo $post['Post']['title']; ?></h2>
-                    </div>
-                    <div class="card-body">
-                        <p> <?php echo $post['Post']['body']; ?> </p>
-                    </div>
+                            <h2> <?php echo $post['Post']['title']; ?></h2>
+                        </div>
+                        <div class="card-body">
+                            <p> <?php echo $post['Post']['body']; ?> </p>
+                        </div>
+                   </div>
                 </div>
         <?php endforeach; ?>
     </div>

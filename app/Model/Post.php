@@ -4,6 +4,9 @@ class Post extends AppModel {
     public $name = 'Post';
 
     public $validate =array(
+       'id_user'=>array(
+           'rule' => 'notBlank'
+       ), 
         'title' => array(
             'rule' => 'notBlank'
         ),

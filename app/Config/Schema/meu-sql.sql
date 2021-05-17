@@ -1,14 +1,21 @@
-CREATE TABLE posts (
+CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(50),
-    body TEXT,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    role VARCHAR(20),
     created TIMESTAMP DEFAULT NULL,
     modified TIMESTAMP DEFAULT NULL
 );
 
-INSERT INTO posts (title, body, created)
-    VALUES ('The title', 'This is the post body.', NOW());
-INSERT INTO posts (title, body, created)
-    VALUES ('A title once again', 'And the post body follows.', NOW());
-INSERT INTO posts (title, body, created)
-    VALUES ('Title strikes back', 'This is really exciting! Not.', NOW());
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    id_user INT NOT NULL,
+    title VARCHAR(50),
+    body TEXT,
+    created TIMESTAMP DEFAULT NULL,
+    modified TIMESTAMP DEFAULT NULL,
+    FOREIGN KEY (id_user) REFERENCES users (id)
+);
+
+INSERT INTO users (username, password, role)
+    VALUES ('neto', '1234', 'Admin');

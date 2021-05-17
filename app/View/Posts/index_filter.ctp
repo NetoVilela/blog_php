@@ -3,10 +3,10 @@
     </div>
         
         <div class="actions-posts">
-        
             <a href="/posts/add" class="btn btn-success"> Adicionar uma postagem </a>
             <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
-                        <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search">
+                        <input class="form-control " type="search" placeholder="Buscar"
+                         name="search_content" aria-label="Search" value="<?php echo $search; ?>">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>       
         </div>

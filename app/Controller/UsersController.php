@@ -11,7 +11,9 @@ class UsersController extends AppController{
             $this->redirect('/posts/index');
             
         }else{
-            $this->Flash->error(__('Usuário ou senha inválido, tente novamente.'));
+            if($this->request->is('post')){
+                $this->Flash->error(__('Usuário ou senha inválido, tente novamente.'));
+            } 
         }
     }
 
