@@ -10,6 +10,7 @@
 .btn-logout{
     display: flex;
     align-items: center;
+	
 }
 .actions-posts{
     display:flex;
@@ -91,10 +92,10 @@
     align-items: center;
 }
 .card p{
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 6; 
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
 }
 .card:hover{
@@ -118,7 +119,15 @@
     font-size: 1.4em;
 }
 .icon-box{
-    
+
     display: flex;
     justify-content: space-around;
+}
+
+/*==============================RODAPÉ=====================================*/
+.rodape{
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	margin: 0;
 }

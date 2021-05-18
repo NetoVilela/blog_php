@@ -3,34 +3,34 @@
 class PostsController extends AppController{
     public $helpers = array('Html', 'Form', 'Flash');
     public $components = array('Flash');
-    
-    public function index(){  
+
+    public function index(){
         //$_SESSION['search_content'] = '';
         if(AuthComponent::user('username')){ //Usuário logado
 
             if(AuthComponent::user('role')=='admin'){ //Usuário admin
-                $conditions = array( 
+                $conditions = array(
                  "Post.active =" => 'true'
                 );
             }else{                                  //Usuário author
-                $conditions = array( 
+                $conditions = array(
                 "AND" => array("Post.id_user =" => AuthComponent::user('id'), "Post.active =" => 'true')
             );
             }
             $this->set('posts',$this->Post->find('all', array('conditions'=>$conditions)));
-            
+
         }else{  //Usuário deslogado
             $this->set('posts',$this->Post->find('all'));
-        } 
+        }
     }
 
     public function index_filter(){
-        $search_content = $this->request->data['search_content'];   
+        $search_content = $this->request->data['search_content'];
         $status = $this->request->data['active'];
         $this->search = $search_content;
         $this->set('search', $search_content);
         $_SESSION['search_content'] = $search_content;
-        
+
         if($status=='all'){                             //Pesquisou "todos"
 
             if(AuthComponent::user('role')=='admin'){ //Usuário admin
@@ -47,8 +47,8 @@ class PostsController extends AppController{
                     "Post.body ILIKE" => '%'.$search_content.'%'
                     ),
                     "AND" => array("Post.id_user =" => AuthComponent::user('id'))
-                );     
-            }           
+                );
+            }
             $this->set('posts',$this->Post->find('all', array('conditions'=>$conditions)));
         }else{                                      //Pesquisou "ativos" ou "inativos"
 
@@ -80,7 +80,6 @@ class PostsController extends AppController{
 
     public function add(){
         if($this->request->is('post')){
-            //print_r($this->request->data);
             if($this->Post->save($this->request->data)){
                 $this->Flash->success("Post criado com sucesso!");
                 $this->redirect(array('action'=>'index'));
@@ -101,14 +100,10 @@ class PostsController extends AppController{
     }
 
     public function delete($id){
-        $this->request->data = $this->Post->findById($id);
-
-        $this->request->data['Post']['active'] = 'false';
-        if($this->Post->save($this->request->data)){
+        if($this->Post->delete($id)){
             $this->Flash->success('Postagem deletada com sucesso!');
             $this->redirect(array('action'=>'index'));
         }
-   
     }
 
     public function active($id){

@@ -1,21 +1,27 @@
 <?php if(AuthComponent::user('username')): ?>
-    <div class="bg-primary">  
+    <div class="bg-primary">
         <h1 class="text-center text-light">Posts do blog</h1>
     </div>
-        
+
         <div class="actions-posts">
-        
+
             <a href="/posts/add" class="btn btn-success"> Adicionar uma postagem </a>
 
             <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
-                <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search" value='<?php echo $_SESSION['search_content']; ?>'>
+                <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search" value='<?php
+                 	if($_SESSION['search_content']){
+                 		echo $_SESSION['search_content'];
+                 	}else{
+                 		echo '';
+                 	}
+                 ?>'>
                 <select name="active" id="active">
                     <option value="true">Ativos</option>
                     <option value="false">Inativos</option>
                     <option value="all">Todos</option>
                 </select>
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>      
+            </form>
 
         </div>
     Registros filtrados: <?php echo sizeof($posts); ?>
@@ -23,16 +29,15 @@
 
         <tr>
             <th>Id</th>
-            <th>Título</th>     
+            <th>Título</th>
             <th>Data de criação</th>
             <th>Ações</th>
         </tr>
 
         <?php foreach($posts as $post): ?>
-        
             <tr>
                 <td> <?php echo $post['Post']['id'];  ?> </td>
-                <td > 
+                <td >
                         <a data-toggle="collapse" href="#bodyCollapse<?php echo $post['Post']['id']; ?>" role="button" aria-expanded="false" aria-controls="bodyCollapse">
                             <?php echo $post['Post']['title']; ?>
                         </a>
@@ -40,21 +45,19 @@
                         <div id="bodyCollapse<?php echo $post['Post']['id']; ?>" class="collapse">
                             <div class="text-justify">
                                 <p><?php echo $post['Post']['body']; ?></p>
-                            </div>                
+                            </div>
                         </div>
-
                 </td>
                 <td> <?php echo $post['Post']['created']; ?> </td>
                 <td class="icon-box">
-                    
+
                 <a href="/posts/edit/<?php  echo $post['Post']['id'] ?>">
                     <i class="fas fa-edit "></i>
                 </a>
 
-            
                 <a href="/posts/delete/<?php echo $post['Post']['id']?>">
                     <i class="fas fa-trash-alt text-danger"></i>
-                </a>      
+                </a>
 
             <!-- Início do efeito do ícone active -->
                 <?php if($post['Post']['active']) {?>
@@ -71,16 +74,19 @@
                 <?php } ?>
             <!-- Fim do efeito do ícone active -->
 
-                </td> 
+                </td>
             </tr>
 
-        <?php endforeach; ?> 
+        <?php endforeach; ?>
 <?php endif; ?>
 
 <?php if(!AuthComponent::user('username')): ?>
 
     <div class="container cards">
         <?php foreach($posts as $post): ?>
+
+            <?php if($post['Post']['active']): ?>
+
                 <div class="card  col-sm-10  col-md-3" onclick="redirectPost(<?php echo $post['Post']['id'];  ?>)" >
                    <div>
                     <div class="card-head text-center">
@@ -91,6 +97,7 @@
                         </div>
                    </div>
                 </div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
@@ -118,7 +125,7 @@ function inverteIconeActive(indice, id){
     if(indice==4){
         iconActive.setAttribute('class','fas fa-eye text-muted');
     }
-    
+
 }
 
 </script>

@@ -3,8 +3,8 @@ CREATE TABLE users (
     username VARCHAR(50),
     password VARCHAR(255),
     role VARCHAR(20),
-    created TIMESTAMP DEFAULT NULL,
-    modified TIMESTAMP DEFAULT NULL
+    created TIMESTAMP(0) DEFAULT NULL,
+    modified TIMESTAMP(0) DEFAULT NULL
 );
 
 CREATE TABLE posts (
@@ -13,8 +13,8 @@ CREATE TABLE posts (
     title VARCHAR(50),
     body TEXT,
     active boolean,
-    created TIMESTAMP DEFAULT NULL,
-    modified TIMESTAMP DEFAULT NULL,
+    created TIMESTAMP(0) DEFAULT NULL,
+    modified TIMESTAMP(0) DEFAULT NULL,
     FOREIGN KEY (id_user) REFERENCES users (id)
 );
 

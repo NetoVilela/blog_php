@@ -9,7 +9,6 @@
                 echo $this->Form->input('title', array('class'=>'form-control'));
                 echo $this->Form->input('body', array('rows'=>'3', 'class'=>'form-control'));
                 echo $this->Form->input('id',array('type'=>'hidden'));
-                
             ?>
             <input type="submit" value="Editar postagem" class="btn btn-success btn-aux">
         </div>

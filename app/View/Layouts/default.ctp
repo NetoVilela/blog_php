@@ -39,7 +39,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						<a href="/users/login">Login</a>
 					</li>
 				<?php endif; ?>
-					
+
 				<?php if(AuthComponent::user('role')=='admin'): ?>
 					<li class="menu-li">
 						<a href="/users/add">Cadastro de novos usuários</a>
@@ -53,7 +53,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<div class="name-user">
 					<?php echo AuthComponent::user('username'); ?>
 				</div>
-					<a href="/users/logout" class="btn btn-danger btn-logout ">Logout</a>
+					<a href="/users/logout" class="btn btn-logout text-danger ">Logout</a>
 			</div>
 		<?php endif; ?>
 	</nav>
@@ -65,8 +65,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 	</div>
 
+		<footer class="panel panel-default rodape bg-light">
+			<div class="panel-heading">
+				<p class="text-center">&copy; Blog cake-php</p>
+			</div>
+			<div class="panel-body bg-muted">
+				<p class="text-center">Desenvolvido por Neto Vilela</p>
+			</div>
+		</footer>
+
 	<script src="/app/webroot/js/jquery-3.6.0.min.js"> </script>
 	<script src="/app/webroot/js/bootstrap.min.js"></script>
-	
+
 </body>
 </html>
