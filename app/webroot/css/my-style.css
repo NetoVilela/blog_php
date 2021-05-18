@@ -117,3 +117,8 @@
 .table-user{
     font-size: 1.4em;
 }
+.icon-box{
+    
+    display: flex;
+    justify-content: space-around;
+}
