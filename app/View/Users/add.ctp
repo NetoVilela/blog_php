@@ -4,6 +4,7 @@
     <fieldset>
         <?php
             echo $this->Form->input('username', array('class'=>'form-control'));
+            echo $this->Form->input('name', array('class'=>'form-control'));
             echo $this->Form->input('password', array('class'=>'form-control'));
             echo $this->Form->input('role',array(
                 'options' => array('admin' => 'Admin', 'author'=>'Author')

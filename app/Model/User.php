@@ -23,7 +23,13 @@ class User extends AppModel{
                 'message' => 'Por favor, entre com uma função válida',
                 'allowBlank' => false
             )
-        )
+        ),
+		'name' => array(
+			'required' => array(
+				'rule' => array('notBlank'),
+				'message' => 'Nome é necessário'
+			)
+		)
     );
 
     public function beforeSave($options = array()){

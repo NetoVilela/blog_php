@@ -8,9 +8,9 @@
                 <?php echo $this->Form->create('User'); ?>
                     <fieldset>
                         <legend class="text-center"><?php echo __('Login'); ?></legend>
-                        <?php 
-                            echo $this->Form->input("username", array('class' => 'form-control'));
-                            echo $this->Form->input('password', array('class' => 'form-control'));
+                        <?php
+                            echo $this->Form->input("username", array('class' => 'form-control', 'required'=>'false'));
+                            echo $this->Form->input('password', array('class' => 'form-control', 'required'=>'false'));
                         ?>
                     </fieldset>
                 <input type="submit" value="Entrar" class="btn btn-success btn-aux">

@@ -3,6 +3,7 @@ CREATE TABLE users (
     username VARCHAR(50),
     password VARCHAR(255),
     role VARCHAR(20),
+    name VARCHAR(50),
     created TIMESTAMP(0) DEFAULT NULL,
     modified TIMESTAMP(0) DEFAULT NULL
 );

@@ -51,7 +51,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php  if(AuthComponent::user('username')): ?>
 			<div class="secondary-menu">
 				<div class="name-user">
-					<?php echo AuthComponent::user('username'); ?>
+					<?php echo AuthComponent::user('name'); ?>
 				</div>
 					<a href="/users/logout" class="btn btn-logout text-danger ">Logout</a>
 			</div>

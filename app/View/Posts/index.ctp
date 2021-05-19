@@ -9,10 +9,10 @@
 
             <form class="form-inline  my-lg-0 justify-content-center" method="post" action="/posts/index_filter" >
                 <input class="form-control " type="search" placeholder="Buscar" name="search_content" aria-label="Search" value='<?php
-                 	if($_SESSION['search_content']){
-                 		echo $_SESSION['search_content'];
-                 	}else{
+                 	if(!isset($_SESSION['search_content'])){
                  		echo '';
+                 	}else{
+                 		echo $_SESSION['search_content'];
                  	}
                  ?>'>
                 <select name="active" id="active">

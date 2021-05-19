@@ -10,7 +10,7 @@
 .btn-logout{
     display: flex;
     align-items: center;
-	
+
 }
 .actions-posts{
     display:flex;
@@ -126,8 +126,8 @@
 
 /*==============================RODAPÉ=====================================*/
 .rodape{
-	position: absolute;
-	bottom: 0;
-	width: 100vw;
-	margin: 0;
+	margin: auto;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
 }

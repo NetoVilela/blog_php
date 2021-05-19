@@ -7,18 +7,23 @@ class UsersController extends AppController{
     }
 
     public function login(){
-        if($this->Auth->login()){
+		 if($this->Auth->login()){
             $this->redirect('/posts/index');
-            
         }else{
-            if($this->request->is('post')){
-                $this->Flash->error(__('Usuário ou senha inválido, tente novamente.'));
-            } 
+		 	if($this->request->is('post')) {
+				if ($this->request->data['User']['username'] == '') {
+					$this->Flash->error(__('Informe um username'));
+				} elseif ($this->request->data['User']['password'] == '') {
+					$this->Flash->error(__('Informe uma senha'));
+				} else {
+						$this->Flash->error(__('Usuário ou senha inválido, tente novamente.'));
+				}
+			}
         }
     }
 
     public function logout(){
-        $this->redirect($this->Auth->logout());    
+        $this->redirect($this->Auth->logout());
     }
 
     public function index(){
