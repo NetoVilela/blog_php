@@ -19,5 +19,3 @@ CREATE TABLE posts (
     FOREIGN KEY (id_user) REFERENCES users (id)
 );
 
-INSERT INTO users (username, password, role)
-    VALUES ('neto', '1234', 'Admin');

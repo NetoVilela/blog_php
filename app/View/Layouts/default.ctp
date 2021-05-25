@@ -38,11 +38,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<li class="menu-li">
 						<a href="/users/login">Login</a>
 					</li>
-				<?php endif; ?>
-
-				<?php if(AuthComponent::user('role')=='admin'): ?>
 					<li class="menu-li">
-						<a href="/users/add">Cadastro de novos usuários</a>
+						<a href="/users/add">Cadastre-se</a>
 					</li>
 				<?php endif; ?>
 			</ul>

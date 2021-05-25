@@ -29,7 +29,12 @@ ehthumbs.db
 Thumbs.db
 
 
-./pgdata
-pgdata
+
 /pgdata
-.pgdata
+pgdata
+./pgdata
+./node_modules
+node_modules
+/node_modules
+
+

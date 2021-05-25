@@ -49,7 +49,7 @@
  * database. Uses database default not specified.
  *
  * sslmode =>
- * For Postgres specifies whether to 'disable', 'allow', 'prefer', or 'require' SSL for the 
+ * For Postgres specifies whether to 'disable', 'allow', 'prefer', or 'require' SSL for the
  * connection. The default value is 'allow'.
  *
  * unix_socket =>
@@ -69,10 +69,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Postgres',
 		'persistent' => false,
-		'host' => 'postgres-container',
-		'login' => 'postgres',
-		'password' => '1234',
-		'database' => 'blog-php',
+		'host' => 'ec2-34-193-112-164.compute-1.amazonaws.com',
+		'login' => 'lelindzxykcvnk',
+		'password' => '16fd43176c4d9b85166dca70ed97382e25fad131341099c8d8c7d08a33fdc6fc',
+		'database' => 'd20b9dhgs3og9p',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
@@ -80,12 +80,11 @@ class DATABASE_CONFIG {
 	public $test = array(
 		'datasource' => 'Database/Postgres',
 		'persistent' => false,
-		'host' => 'postgres-container',
-		'login' => 'postgres',
-		'password' => '1234',
-		'database' => 'blog-php',
+		'host' => 'ec2-34-193-112-164.compute-1.amazonaws.com',
+		'login' => 'lelindzxykcvnk',
+		'password' => '16fd43176c4d9b85166dca70ed97382e25fad131341099c8d8c7d08a33fdc6fc',
+		'database' => 'd20b9dhgs3og9p',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
 }
- 
