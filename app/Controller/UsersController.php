@@ -39,11 +39,14 @@ class UsersController extends AppController{
     }
 
     public function add(){
+//     	echo "<pre>";
+//     	print_r($this->request->data['User']);
+// 		echo "</pre>";
         if($this->request->is('post')){
             $this->User->create();
             if($this->User->save($this->request->data)){
                 $this->Flash->success(__('O usuário foi salvo com sucesso!'));
-                $this->redirect(Array('action' => 'index'));
+                $this->redirect(Array( 'controller'=>'posts', 'action' => 'index' ));
             }else{
                 $this->Flash->error(__('O usuário não foi salvo. Por favor, tente novamente.'));
             }

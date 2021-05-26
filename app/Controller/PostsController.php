@@ -101,21 +101,6 @@ class PostsController extends AppController{
     public function edit($id = null){
         $this->Post->id = $id;
 
-//        if($this->request->is('get')) {
-//			if ($this->request->data['Post']['title'] == '') {   //Título vazio
-//				$this->Flash->error(__('Informe um título'));
-//			} elseif ($this->request->data['Post']['body'] == '') {    //Corpo vazio
-//				$this->Flash->error(__('Informe um conteúdo'));
-//			} else {
-//				if ($this->request->is('post')) {    //Verifica se é do tipo post
-//					if ($this->Post->save($this->request->data)) {    //Adiciona
-//						$this->Flash->success("Post criado com sucesso!");
-//						$this->redirect(array('action' => 'index'));
-//					}
-//				}
-//			}
-//		}
-
         if($this->request->is('get')){
             $this->request->data = $this->Post->findById($id);
         }else{
