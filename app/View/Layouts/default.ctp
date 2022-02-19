@@ -67,7 +67,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<p class="text-center">&copy; Blog cake-php</p>
 			</div>
 			<div class="panel-body bg-muted">
-				<p class="text-center">Desenvolvido por Neto Vilela</p>
+				<!-- <p class="text-center">Desenvolvido por Neto Vilela</p> -->
 			</div>
 		</footer>
 
